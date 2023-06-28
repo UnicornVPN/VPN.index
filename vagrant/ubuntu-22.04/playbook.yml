@@ -1,0 +1,10 @@
+- name: Update web servers
+  hosts: default
+  remote_user: vagrant
+
+  tasks:
+    - name: Install packages
+      ansible.builtin.apt:
+        pkg:
+          - ansible
+      become: true
