@@ -10,12 +10,12 @@
           - auto-apt-proxy
       become: true
 
-    - name: Install packages
-      ansible.builtin.apt:
-        pkg:
-          - ansible
-          - lxde
-          - lxterminal
-          - lxsession
-      become: true
-      when: false
+    # - name: Install packages
+    #   ansible.builtin.apt:
+    #     pkg:
+    #       - ansible
+    #       - lxde
+    #       - lxterminal
+    #       - lxsession
+    #   become: true
+    #   when: false
