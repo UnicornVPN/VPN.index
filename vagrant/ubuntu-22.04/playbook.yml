@@ -3,7 +3,7 @@
   remote_user: vagrant
 
   tasks:
-      - name: AptCacherNg Client
+    - name: AptCacherNg Client
       ansible.builtin.apt:
         pkg:
           - squid-deb-proxy-client
