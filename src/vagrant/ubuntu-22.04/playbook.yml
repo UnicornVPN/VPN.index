@@ -1,5 +1,5 @@
-- name: Update web servers
-  hosts: default
+- name: Setup
+  hosts: test # , default
   remote_user: vagrant
 
   tasks:
