@@ -18,4 +18,4 @@ if __name__ == '__main__':
     link = ["https://youtu.be/TbvWnJh9e-g?t=902"]
     Browser.open(link)
 
-    Search.open()
+    # Search.open()
