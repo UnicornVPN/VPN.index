@@ -17,7 +17,7 @@
           - gdm3
           - gnome-terminal
       become: true
-      when: false
+      # when: false
 
     # - name: Install packages
     #   ansible.builtin.apt:
