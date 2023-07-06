@@ -5,7 +5,12 @@
 		},
 		{
 			"path": "../src/python"
+		},
+		{
+			"path": "../src/vagrant"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"ansible.python.interpreterPath": "/bin/python3"
+	}
 }

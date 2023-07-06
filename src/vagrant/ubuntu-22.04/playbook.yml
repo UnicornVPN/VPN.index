@@ -10,6 +10,15 @@
           - auto-apt-proxy
       become: true
 
+    - name: Install packages
+      ansible.builtin.apt:
+        pkg:
+          - ansible
+          - gdm3
+          - gnome-terminal
+      become: true
+      when: false
+
     # - name: Install packages
     #   ansible.builtin.apt:
     #     pkg:
