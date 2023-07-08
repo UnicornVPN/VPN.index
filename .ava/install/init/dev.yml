@@ -1,6 +1,3 @@
-- hosts: localhost
-  gather_facts: true
-
 - name: JupyterNotebook.ide
   ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/vpn/JupyterNotebook.ide/src/ansible/pre.yml"
 
