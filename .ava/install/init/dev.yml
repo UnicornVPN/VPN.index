@@ -1,2 +1,8 @@
-- name: VisualStudioCode
-  ansible.builtin.import_playbook: "{{ ansible_env.HOME }}/src/vpn/WebScraper.AI/src/ansible/uni.yml"
+- hosts: localhost
+  gather_facts: true
+
+- name: JupyterNotebook.ide
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/vpn/JupyterNotebook.ide/src/ansible/pre.yml"
+
+- name: WebScraper.AI
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/vpn/WebScraper.AI/src/ansible/uni.yml"
