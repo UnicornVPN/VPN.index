@@ -1,0 +1,24 @@
+- hosts: localhost
+  vars:
+    src: ""
+    uni: ".uni/"
+    ava: "{{uni}}/ava/"
+    bot: "bot/"
+    old: "old/"
+    stor: "{{uni}}/stor/"
+    vm: "{{uni}}/vm/"
+    repo: [
+      { subdir: "{{old}}", repo: "git@github.com:MetaBotAI/MetaBot.old.git", name: "MetaBot.old"},
+      { subdir: "{{old}}", repo: "git@github.com:MetaBotAI/Old.xdotool.git", name: "Old.xdotool"},
+      { subdir: "{{uni}}", repo: "git@github.com:Source-Graph/ansible.template.git", name: "ansible.template"},
+      ]
+  tasks:
+  - debug:
+      msg: "{{item.name}}"
+    loop: "{{repo}}"
+
+  - name: Git checkout
+    ansible.builtin.git:
+      repo: "{{item.repo}}"
+      dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/{{item.subdir}}{{item.name}}"
+    loop: "{{repo}}"

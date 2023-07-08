@@ -1,0 +1,30 @@
+# Use:
+# ansible-playbook prod.yml --tags pre
+# ansible-playbook prod.yml --tags init
+
+- hosts: localhost
+  tags: [ pre, git]
+  vars:
+    src: ""
+    uni: ".uni/"
+    bot: "bot/"
+    stor: "{{uni}}stor/"
+    vm: "{{uni}}vm/"
+    repo: [
+      # Master Repo
+      { subdir: "{{src}}", repo: "git@github.com:MetaBotAI/metabotAI.git", name: "metabotAI"},
+      #
+      { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/game.Runescape.git", name: "game.Runescape"},
+      { subdir: "{{src}}", repo: "git@github.com:MetaBotAI/library.Simba.git", name: "library.Simba"},
+      ]
+
+  tasks:
+  - debug:
+      msg: "{{item.name}}"
+    loop: "{{repo}}"
+
+  - name: Git checkout
+    ansible.builtin.git:
+      repo: "{{item.repo}}"
+      dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/{{item.subdir}}{{item.name}}"
+    loop: "{{repo}}"
