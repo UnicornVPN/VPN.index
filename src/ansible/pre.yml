@@ -1,0 +1,6 @@
+- name: Pull in .pre dependencies
+  hosts: localhost
+  vars:
+    vagrant: true
+  roles:
+    - .pre

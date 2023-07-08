@@ -1,0 +1,11 @@
+- hosts: localhost #, fedora, ubuntu
+  vars:
+    # Host_vars
+    ansible_become_password: u
+    ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
+
+  roles:
+    - Jupyter
+    - Jupyter/Notebook
+    - Jupyter/VSCode Extension
+    - Jupyter/new Project

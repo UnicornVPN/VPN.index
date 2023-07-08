@@ -1,0 +1,19 @@
+vagrant: false
+
+# Change this file to add dependency artifacts, repos, & roles!
+repo: [
+  ]
+
+role: [
+  ]
+
+library: [
+  # { git: "getGPU", name: "get_gpu.py", path: "src/ansible/library"},
+  ]
+
+# set Inventory
+dynamic_inventory: "{{static_inventory}}"
+test_inventory: true
+
+# dependencies
+git_fetch_update: true
