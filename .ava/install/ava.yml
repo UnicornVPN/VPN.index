@@ -7,3 +7,8 @@
 - name: pre.yml
   ansible.builtin.import_playbook: fn/pre.yml
   tags: [pre]
+
+# Setup
+- name: setup.yml
+  ansible.builtin.import_playbook: fn/setup.yml
+  tags: [setup]
