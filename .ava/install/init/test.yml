@@ -1,5 +1,2 @@
-- name: LXD.hyperion
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/vm/LXD.Hyperion/src/ansible/uni.yml"
-
-- name: Vagrant
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/vm/Vagrant/src/ansible/uni.yml"
+# - name: LXD.hyperion
+#   ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/vm/LXD.Hyperion/src/ansible/uni.yml"

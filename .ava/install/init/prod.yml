@@ -1,15 +1,2 @@
-- name: library.Simba
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/library.Simba/src/ansible/pre.yml"
-
-- name: library.Simba uni()
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/library.Simba/src/ansible/uni.yml"
-
-- name: game.Runescape
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/game.Runescape/src/x86/ansible/pre.yml"
-
-- name: game.Runescape dev()
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/game.Runescape/src/x86/ansible/dev.yml"
-
-- name: MetaBot dependencies
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/metabotAI/src/ansible/uni.yml"
-  tags: prod
+# - name: library.Simba
+#   ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/library.Simba/src/ansible/pre.yml"

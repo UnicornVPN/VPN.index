@@ -1,2 +1,2 @@
-- name: VisualStudioCode
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/ava/VisualStudioCode/src/ansible/uni.yml"
+# - name: VisualStudioCode
+#   ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/ava/VisualStudioCode/src/ansible/uni.yml"

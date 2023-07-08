@@ -1,18 +1,8 @@
 - hosts: localhost
   vars:
-    uni: ".uni/"
-    os: "{{uni}}os/"
-    stor: "{{uni}}stor/"
-    vm: "{{uni}}vm/"
-    monitor: "{{uni}}monitor/"
-    repo: [
-      { subdir: "{{monitor}}", repo: "git@github.com:Unicorn-OS/intel-gpu-tools.monitor.git", name: "intel-gpu-tools.monitor"},      
-      { subdir: "{{os}}", repo: "git@github.com:Unicorn-OS/Nested.DesktopEnvironment.git", name: "Nested.DesktopEnvironment"},
-      { subdir: "{{stor}}", repo: "git@github.com:UniStor/MinIO.git", name: "MinIO"},
-      { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/LXD.hyperion.git", name: "LXD.hyperion"},
-      { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/VirtualDisplay.git", name: "VirtualDisplay"},
-      { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/Vagrant.git", name: "Vagrant"},
-      ]
+    src: ""
+    repo: []
+
   tasks:
   - debug:
       msg: "{{item.name}}"

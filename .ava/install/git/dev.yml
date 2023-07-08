@@ -1,5 +1,4 @@
 - hosts: localhost
-  tags: [ pre, git]
   vars:
     src: ""
     uni: ".uni/"

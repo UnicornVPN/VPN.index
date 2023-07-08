@@ -6,17 +6,7 @@
   tags: [ pre, git]
   vars:
     src: ""
-    uni: ".uni/"
-    bot: "bot/"
-    stor: "{{uni}}stor/"
-    vm: "{{uni}}vm/"
-    repo: [
-      # Master Repo
-      { subdir: "{{src}}", repo: "git@github.com:MetaBotAI/metabotAI.git", name: "metabotAI"},
-      #
-      { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/game.Runescape.git", name: "game.Runescape"},
-      { subdir: "{{src}}", repo: "git@github.com:MetaBotAI/library.Simba.git", name: "library.Simba"},
-      ]
+    repo: []
 
   tasks:
   - debug:
