@@ -1,6 +1,6 @@
 # Get repos
-- name: dev.yml
-  ansible.builtin.import_playbook: git/dev.yml
+- name: git.yml
+  ansible.builtin.import_playbook: fn/git.yml
 
 # Pre
 - name: JupyterNotebook.ide( pre )
@@ -12,5 +12,5 @@
 # Init
 - hosts: localhost
   tasks:
-  - name: Init submodule dev.yml
-    ansible.builtin.shell: ansible-playbook init/dev.yml
+  - name: Init submodule git.yml
+    ansible.builtin.shell: ansible-playbook fn/init.yml
