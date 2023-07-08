@@ -18,19 +18,19 @@
   tags: [prod, never]
 
 #--------------------------------------------
-# Init submodules
+# Init submodule
 - hosts: localhost
   tasks:
-  - name: init/dev.yml
+  - name: Init submodule dev.yml
     ansible.builtin.shell: ansible-playbook init/dev.yml
     tags: [dev, never]
 
-  - name: init/test.yml
-    ansible.builtin.shell: ansible-playbook init/test.yml
-    tags: [test, never]
-
-  - name: init/prod.yml
-    ansible.builtin.shell: ansible-playbook init/prod.yml
-    tags: [prod, never]
+#  - name: Init submodule test.yml
+#    ansible.builtin.shell: ansible-playbook init/test.yml
+#    tags: [test, never]
+#
+#  - name: Init submodule prod.yml
+#    ansible.builtin.shell: ansible-playbook init/prod.yml
+#    tags: [prod, never]
 
 # Debug: This is not going to have any output. Run them individually by hand if you need to debug!
