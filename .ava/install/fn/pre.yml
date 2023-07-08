@@ -12,5 +12,5 @@
     ansible.builtin.shell: ansible-playbook pre.yml
     args:
       chdir: "{{ src_dir }}/{{ item }}/src/ansible"
-      creates: "{{ src_dir }}/{{ item }}/src/ansible/.pre/.depends/git"
+      creates: "{{ src_dir }}/{{ item }}/src/ansible/.pre/.depends"
     loop: "{{ dependencies }}"
