@@ -3,7 +3,7 @@
     src: ""
     uni: ".uni/"
     vpn: "vpn/"
-    bitgraph: "{{uni}}/bitgraph/"
+    bitgraph: "{{uni}}bitgraph/"
     repo: [
       { subdir: "{{bitgraph}}", repo: "git@github.com:BitGraph/MariaDB.git", name: "MariaDB"},
       { subdir: "{{vpn}}", repo: "git@github.com:UnicornVPN/VPN.index.git", name: "VPN.index"},
