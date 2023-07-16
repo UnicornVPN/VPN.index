@@ -1,0 +1,2 @@
+virtual_env: "{{playbook_dir | dirname}}/python/venv"
+

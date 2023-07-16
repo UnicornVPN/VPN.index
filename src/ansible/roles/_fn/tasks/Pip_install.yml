@@ -1,0 +1,7 @@
+- name: Pip install pkgs into virtualenv
+  ansible.builtin.pip:
+    name: "{{item}}"
+    virtualenv: "{{ venv }}"
+  loop: "{{ virtual_env }}"
+  loop_control:
+    loop_var: venv

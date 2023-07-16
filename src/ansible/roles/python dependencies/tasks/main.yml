@@ -1,0 +1,10 @@
+- debug:
+    msg: "{{virtual_env}}"
+
+- name: Pip install requirements
+  include_tasks: "{{fn}}/Pip_install.yml"
+  loop:
+  - selenium
+  - webdriver-manager 
+  - lxml
+  - beautifulsoup4
