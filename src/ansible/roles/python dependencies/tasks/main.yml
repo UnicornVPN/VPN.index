@@ -4,6 +4,7 @@
 - name: Pip install requirements
   include_tasks: "{{fn}}/Pip_install.yml"
   loop:
+  - mysql-connector-python
   - selenium
   - webdriver-manager 
   - lxml
