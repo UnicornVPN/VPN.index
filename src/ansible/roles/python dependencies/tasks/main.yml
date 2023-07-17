@@ -1,10 +1,15 @@
 - debug:
     msg: "{{virtual_env}}"
 
-- name: Pip install requirements
+- name: Pip install SQL
   include_tasks: "{{fn}}/Pip_install.yml"
   loop:
   - mysql-connector-python
+  - sqlalchemy
+
+- name: Pip install Web Scraping
+  include_tasks: "{{fn}}/Pip_install.yml"
+  loop:
   - selenium
   - webdriver-manager 
   - lxml
