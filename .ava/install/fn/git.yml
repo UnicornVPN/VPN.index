@@ -2,7 +2,7 @@
   vars:
     src: ""
     uni: ".uni/"
-    vpn: "vpn/"
+    vpn: "{{uni}}vpn/"
     bitgraph: "{{uni}}bitgraph/"
     repo: [
       { subdir: "{{bitgraph}}", repo: "git@github.com:BitGraph/MariaDB.git", name: "MariaDB"},
