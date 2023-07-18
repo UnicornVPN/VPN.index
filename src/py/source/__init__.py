@@ -43,16 +43,18 @@ class Source():
             set_pgs.add(p[0])
         return set_pgs
 
-if __name__ == '__main__':
-    def _test():
-        from browser.Page import Page
-        from source import Source
-        # Test
-        src = Source(debug=False)
-        print(src)
-        print(src.get("top"))
-        pg1 = Page()
-        pg1.url = src.get("top").pop()
-        pg1.open()
 
+def _test():
+    from browser.Page import Page
+    from source import Source
+    # Test
+    src = Source(debug=False)
+    print(src)
+    print(src.get("top"))
+    pg1 = Page()
+    pg1.url = src.get("top").pop()
+    pg1.open()
+
+
+if __name__ == '__main__':
     _test()
