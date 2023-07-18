@@ -1,8 +1,12 @@
 - name: JupyterNotebook.ide
   ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/vpn/JupyterNotebook.ide/src/ansible/uni.yml"
 
-#- name: WebScraper.AI
-#  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/vpn/WebScraper.AI/src/ansible/uni.yml"
+- name: WebScraper.AI
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/vpn/WebScraper.AI/src/ansible/uni.yml"
 
-#- name: MySQL
-#  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/bitgraph/MariaDB/src/ansible/uni.yml"
+- name: MySQL
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/.uni/bitgraph/MariaDB/src/ansible/uni.yml"
+
+# This
+- name: VPN.index
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/VPN.index/src/ansible/uni.yml"
