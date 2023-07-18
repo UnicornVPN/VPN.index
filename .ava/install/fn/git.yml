@@ -5,8 +5,8 @@
     vpn: "{{uni}}vpn/"
     bitgraph: "{{uni}}bitgraph/"
     repo: [
+      { subdir: "{{src}}", repo: "git@github.com:UnicornVPN/VPN.index.git", name: "VPN.index"},
       { subdir: "{{bitgraph}}", repo: "git@github.com:BitGraph/MariaDB.git", name: "MariaDB"},
-      { subdir: "{{vpn}}", repo: "git@github.com:UnicornVPN/VPN.index.git", name: "VPN.index"},
       { subdir: "{{vpn}}", repo: "git@github.com:Source-Graph/JupyterNotebook.ide.git", name: "JupyterNotebook.ide"},
       { subdir: "{{vpn}}", repo: "git@github.com:Uni-AI/WebScraper.AI.git", name: "WebScraper.AI"},
       ]
