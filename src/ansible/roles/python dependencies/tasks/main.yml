@@ -10,7 +10,10 @@
 - name: Pip install Web Scraping
   include_tasks: "{{fn}}/Pip_install.yml"
   loop:
-  - selenium
-  - webdriver-manager 
-  - lxml
   - beautifulsoup4
+  - lxml
+  - pymysql
+  - selenium
+  - sqlalchemy
+  - webdriver-manager 
+
