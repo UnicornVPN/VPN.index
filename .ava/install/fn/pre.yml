@@ -2,13 +2,20 @@
   vars:
     src_dir: "{{lookup('ansible.builtin.env', 'HOME')}}/src"
     namespace_: ".uni/vpn"
-    dependencies: [
-      "{{ namespace }}/JupyterNotebook.ide",
-      "{{ namespace }}/WebScraper.AI",
-      "VPN.index",
-    ]
+#    dependencies: [
+#      "{{ namespace }}/JupyterNotebook.ide",
+#      "{{ namespace }}/WebScraper.AI",
+#      "VPN.index",
+#    ]
 
   tasks:
+  - name: Dependencies
+    ansible.builtin.set_fact:
+      dependencies:
+      - "{{ namespace }}/JupyterNotebook.ide"
+      - "{{ namespace }}/WebScraper.AI"
+      - "VPN.index"
+
   - name: Pre playbook
     ansible.builtin.shell: ansible-playbook pre.yml
     args:
