@@ -1,7 +1,7 @@
 - hosts: localhost
   vars:
     namespace_: vpn
-    src_dir: "{{lookup('ansible.builtin.env', 'HOME')}}/src/{{namespace_}}"
+    src_dir: "{{lookup('ansible.builtin.env', 'HOME')}}/src/.uni/{{namespace_}}"
     dependencies: [
       "JupyterNotebook.ide",
       "WebScraper.AI",

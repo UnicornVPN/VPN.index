@@ -1,3 +1,2 @@
 home_dir: "src"
-# home_dir: "src/vpn"
 depends: ["git@github.com:UnicornVPN/VPN.index.git"]
