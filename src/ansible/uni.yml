@@ -5,8 +5,4 @@
     ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
 
   roles:
-    # - Jupyter
-    # - Jupyter/Notebook
-    # - Jupyter/VSCode Extension
-    # - Jupyter/new Project
     - python dependencies

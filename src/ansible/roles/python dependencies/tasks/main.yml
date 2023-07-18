@@ -4,7 +4,7 @@
 - name: Pip install SQL
   include_tasks: "{{fn}}/Pip_install.yml"
   loop:
-  - mysql-connector-python
+  - pymysql
   - sqlalchemy
 
 - name: Pip install Web Scraping
@@ -12,7 +12,6 @@
   loop:
   - beautifulsoup4
   - lxml
-  - pymysql
   - selenium
   - sqlalchemy
   - webdriver-manager 
