@@ -1,16 +1,17 @@
 - hosts: localhost
   vars:
-    namespace_: vpn
-    src_dir: "{{lookup('ansible.builtin.env', 'HOME')}}/src/.uni/{{namespace_}}"
+    src_dir: "{{lookup('ansible.builtin.env', 'HOME')}}/src"
+    namespace_: ".uni/vpn"
     dependencies: [
-      "JupyterNotebook.ide",
-      "WebScraper.AI",
+      "{{ namespace }}/JupyterNotebook.ide",
+      "{{ namespace }}/WebScraper.AI",
       "VPN.index",
     ]
+
   tasks:
   - name: Pre playbook
     ansible.builtin.shell: ansible-playbook pre.yml
     args:
-      chdir: "{{ src_dir }}/{{ item }}/src/ansible"
-      creates: "{{ src_dir }}/{{ item }}/src/ansible/.pre/.depends"
+      chdir: "{{src_dir}}/{{ item }}/src/ansible"
+      creates: "{{src_dir}}/{{ item }}/src/ansible/.pre/.depends"
     loop: "{{ dependencies }}"
