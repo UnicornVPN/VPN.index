@@ -1,9 +1,9 @@
 def __OCR(img):
-    pass
+    return "todo"
 
 def __getImg():
     pass
 def getPassword():
-    __OCR(__getImg)
+    password = __OCR(__getImg())
 
-    return "todo"
+    return password

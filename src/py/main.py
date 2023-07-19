@@ -2,7 +2,8 @@ from get.vpnbook import Vpnbook
 
 if __name__ == '__main__':
     v = Vpnbook()
+    def test_():
+        print(v.pptp_vpn)
+        print(v.user)
 
-    # print(v.getVpn("open"))
-    # print(v.getVpn("pptp"))
-    print(v.getUser())
+    print(v.password)
