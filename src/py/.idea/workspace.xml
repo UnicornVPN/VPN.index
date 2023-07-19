@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db98a2d2-a546-491b-bfab-384c02b54fe4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/get/vpnbook/password.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.old/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.old/works/.old/functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.old/works/createDatabase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.old/works/withContextManager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get/vpnbook/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/get/vpnbook/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,6 +1,6 @@
-from source import _test
 # from get.vpnbook import getVpn, getUser, getPass
-
+import get.vpnbook as vpnbook
 
 if __name__ == '__main__':
-    # _test()
+    print(vpnbook.getUser())
+    print(vpnbook.getPptpvpn())

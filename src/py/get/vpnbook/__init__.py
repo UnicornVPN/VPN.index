@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-
 from .password import getPassword
 
 source = "https://www.vpnbook.com/freevpn"
