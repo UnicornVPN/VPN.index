@@ -1,7 +1,7 @@
 import shutil, pathlib
 import requests
 from bs4 import BeautifulSoup
-from .password import getPassword, saveImg
+from ..OCR import getPassword
 
 class Vpnbook():
     source = "https://www.vpnbook.com"
@@ -63,6 +63,7 @@ class Vpnbook():
 
     def __getPass(self):
         self.__savePassImg()
+        return getPassword()
 
 
 
