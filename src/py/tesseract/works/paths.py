@@ -6,6 +6,6 @@ dir_ = f"{pathlib.Path.home()}/Downloads"
 
 #
 original = f"{dir_}/{filename}"
-extended = f"{dir_}/extended{ext}"
 large = f"{dir_}/large{ext}"
+margin = f"{dir_}/margin{ext}"
 new = f"{dir_}/new{ext}"

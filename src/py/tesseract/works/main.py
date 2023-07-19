@@ -1,12 +1,20 @@
 import cv2
 import pytesseract
-from works.paths import *
-from works.larger import *
+from .paths import *
+from .larger import *
+from .margin import add_margin
+import os
+
+'''
+from: https://builtin.com/data-science/python-ocr
+video: https://youtu.be/9nUNPrvCFAE
+'''
+
+def clean():
+    old = [large, margin, new]
+    [os.remove(path) for path in old]
 
 def tesseract(image):
-    '''
-    from: https://builtin.com/data-science/python-ocr
-    '''
     text = pytesseract.image_to_string(image)
     return text
 
@@ -23,23 +31,26 @@ def _write(image):
     cv2.imwrite(new, image)
 
 def _process():
-    img = cv2.imread(extended)
+    add_margin()
+    img = cv2.imread(margin)
     img = get_greyscale(img)
     img = thresholding(img)
     _write(img)
     enlarge(new)
 
-def _final(img=large):
-    img = remove_noise(img)
-
 def readText():
     _process()
     img = cv2.imread(large)
+    clean()
     return tesseract(img).strip()
 
 
-if __name__ == '__main__':
+def _test():
     out = readText()
     real = "c9c4b4a"
     if out == real:
         print(f"It's a Match! pw = {out}")
+
+if __name__ == '__main__':
+    _test()
+    clean()
