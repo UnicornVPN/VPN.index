@@ -19,4 +19,4 @@
 - name: Tesseract pip install
   include_tasks: "{{fn}}/Pip_install.yml"
   loop:
-  - pyTesseract
+  - "{{tesseract_python_pkg}}"
