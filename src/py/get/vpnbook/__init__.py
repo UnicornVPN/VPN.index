@@ -7,47 +7,48 @@ source = "https://www.vpnbook.com/freevpn"
 class Vpnbook():
     def __init__(self, url=source):
         self.url = url
-        self.soup = self.getSoup()
+        self.soup = ''
+        self.getSoup()
 
     def getSoup(self):
         response = requests.get(self.url)
-        soup = BeautifulSoup(response.content, 'html.parser')
-        self.soup = soup
-        return soup
+        self.soup = BeautifulSoup(response.content, 'html.parser')
 
 
+    def __getList(self, num=0):
+        soup = self.soup
+        ul = soup.find_all('ul', class_='disc')[num]
+        li = ul.find_all('strong')
+        return li
 
-def __getList(num=0):
-    soup = __getSoup(source)
-    ul = soup.find_all('ul', class_='disc')[num]
-    li = ul.find_all('strong')
-    return li
+    def __getInnerText(self, index):
+        return [li.text for li in self.__getList(index)]
 
-def __getInnerText(index):
-    return [li.text for li in __getList(index)]
 
-def getVpn(which="pptp"):
-    vpn = []
-    match which:
-        case "pptp":
-            vpn = __getInnerText(0)
-        case "open":
-            vpn = __getInnerText(1)
-    return vpn[0:-1]
+    def getVpn(self, which="pptp"):
+        vpn = []
+        match which:
+            case "pptp":
+                vpn = self.__getInnerText(0)
+            case "open":
+                vpn = self.__getInnerText(1)
+        return vpn[0:-1]
 
-def getPptpvpn():
-    return getVpn("pptp")
+    def getPptpvpn(self):
+        return self.getVpn("pptp")
 
-def getOpenvpn():
-    return getVpn("open")
+    def getOpenvpn(self):
+        return self.getVpn("open")
 
-def getUser():
-    return __getInnerText(0)[-1]
+    def getUser(self):
+        return self.__getInnerText(0)[-1]
 
-def getPass():
-    return getPassword()
+    def getPass(self):
+        return getPassword()
 
 if __name__ == '__main__':
-    print(getVpn("open"))
-    print(getVpn("pptp"))
-    print(getUser())
+    v = Vpnbook()
+
+    print(v.getVpn("open"))
+    print(v.getVpn("pptp"))
+    print(v.getUser())

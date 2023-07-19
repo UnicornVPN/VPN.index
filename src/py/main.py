@@ -1,5 +1,8 @@
-import get.vpnbook as vpnbook
+from get.vpnbook import Vpnbook
 
 if __name__ == '__main__':
-    print(vpnbook.getUser())
-    print(vpnbook.getPptpvpn())
+    v = Vpnbook()
+
+    # print(v.getVpn("open"))
+    # print(v.getVpn("pptp"))
+    print(v.getUser())
