@@ -1,0 +1,5 @@
+- name: Install Tesseract
+  ansible.builtin.apt:
+    pkg:
+    - tesseract-ocr
+  become: true
