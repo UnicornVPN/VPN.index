@@ -1,3 +1,4 @@
+import shutil, pathlib
 import requests
 from bs4 import BeautifulSoup
 from .password import getPassword, saveImg
@@ -38,7 +39,7 @@ class Vpnbook():
     def __getUser(self):
         return self.__getInnerText(0)[-1]
 
-    def __getPassImg(self):
+    def __getPasswordImg(self):
         num = 0
         ul = self.soup.find_all('ul', class_='disc')[num]
         li = ul.find_all('li')[-1]
@@ -48,10 +49,20 @@ class Vpnbook():
 
         return img_url
 
+    def __savePassImg(self):
+        '''
+        from: https://stackoverflow.com/a/18043472
+        '''
+        url = self.__getPasswordImg()
+        save_as = f"{pathlib.Path.home()}/Downloads/password.png"
+
+        response = requests.get(url, stream=True)
+        with open(save_as, 'wb') as out_file:
+            shutil.copyfileobj(response.raw, out_file)
+        del response
+
     def __getPass(self):
-        print(self.__getPassImg())
-        url = "https://www.crummy.com/software/BeautifulSoup/bs4/doc/_images/6.1.jpg"
-        saveImg(url)
+        self.__savePassImg()
 
 
 
@@ -59,7 +70,6 @@ if __name__ == '__main__':
     def _test():
         '''from get.vpnbook import Vpnbook'''
         v = Vpnbook()
-
         print(v.pptp_vpn)
         print(v.user)
         print(v.password)
