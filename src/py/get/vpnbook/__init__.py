@@ -4,9 +4,16 @@ from .password import getPassword
 
 source = "https://www.vpnbook.com/freevpn"
 
-def __getSoup(url):
-    response = requests.get(url)
-    return BeautifulSoup(response.content, 'html.parser')
+class Vpnbook():
+    def __init__(self, url=source):
+        self.url = url
+        self.soup = self.getSoup()
+
+    def getSoup(self):
+        response = requests.get(self.url)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        self.soup = soup
+        return soup
 
 
 
