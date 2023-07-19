@@ -54,7 +54,10 @@ class Vpnbook():
         from: https://stackoverflow.com/a/18043472
         '''
         url = self.__getPasswordImg()
-        save_as = f"{pathlib.Path.home()}/Downloads/password.png"
+        dir_ = f"{pathlib.Path.home()}/Downloads/"
+        file = "original"
+        ext = ".png"
+        save_as = f"{dir_}{file}{ext}"
 
         response = requests.get(url, stream=True)
         with open(save_as, 'wb') as out_file:
