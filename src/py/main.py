@@ -6,4 +6,5 @@ if __name__ == '__main__':
         print(v.pptp_vpn)
         print(v.user)
 
-    print(v.password)
+    # print(v.password)
+    v.password

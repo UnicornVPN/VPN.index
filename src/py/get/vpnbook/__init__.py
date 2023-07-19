@@ -1,13 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
-from .password import getPassword
-
-source = "https://www.vpnbook.com/freevpn"
-
+from .password import getPassword, saveImg
 
 class Vpnbook():
-    def __init__(self, url=source):
-        self.url = url
+    source = "https://www.vpnbook.com"
+    url = f"{source}/freevpn"
+    def __init__(self):
         self.soup = ''
         self.setSoup()
         self.open_vpn = self.getVpn("open")
@@ -16,7 +14,7 @@ class Vpnbook():
         self.password = self.__getPass()
 
     def setSoup(self):
-        response = requests.get(self.url)
+        response = requests.get(Vpnbook.url)
         self.soup = BeautifulSoup(response.content, 'html.parser')
 
     def __getList(self, num=0):
@@ -40,8 +38,21 @@ class Vpnbook():
     def __getUser(self):
         return self.__getInnerText(0)[-1]
 
+    def __getPassImg(self):
+        num = 0
+        ul = self.soup.find_all('ul', class_='disc')[num]
+        li = ul.find_all('li')[-1]
+        img = li.find('img')
+        img_path = img['src'].replace(" ", "%20")
+        img_url = f"{Vpnbook.source}/{img_path}"
+
+        return img_url
+
     def __getPass(self):
-        return getPassword()
+        print(self.__getPassImg())
+        url = "https://www.crummy.com/software/BeautifulSoup/bs4/doc/_images/6.1.jpg"
+        saveImg(url)
+
 
 
 if __name__ == '__main__':
