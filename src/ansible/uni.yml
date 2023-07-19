@@ -5,5 +5,5 @@
     ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
 
   roles:
-    - python dependencies
     - Tesseract
+    - python dependencies
