@@ -1,0 +1,7 @@
+https://www.racevpn.com/create-free-pptp-account-france-server
+
+
+u:	racevpn.com-empire122
+p:	foobar123
+serv:	uk-pptp.ipracevpn.com
+ip:	51.68.214.226
