@@ -1,11 +1,13 @@
 import shutil, pathlib
 import requests
 from bs4 import BeautifulSoup
-from ..OCR import getPassword
+from ocr.tesseract.vpnbook_com import ocrPass
 
-class Vpnbook():
+
+class VpnBook():
     source = "https://www.vpnbook.com"
     url = f"{source}/freevpn"
+
     def __init__(self):
         self.soup = ''
         self.setSoup()
@@ -15,7 +17,7 @@ class Vpnbook():
         self.password = self.__getPass()
 
     def setSoup(self):
-        response = requests.get(Vpnbook.url)
+        response = requests.get(VpnBook.url)
         self.soup = BeautifulSoup(response.content, 'html.parser')
 
     def __getList(self, num=0):
@@ -45,7 +47,7 @@ class Vpnbook():
         li = ul.find_all('li')[-1]
         img = li.find('img')
         img_path = img['src'].replace(" ", "%20")
-        img_url = f"{Vpnbook.source}/{img_path}"
+        img_url = f"{VpnBook.source}/{img_path}"
 
         return img_url
 
@@ -65,15 +67,16 @@ class Vpnbook():
         del response
 
     def __getPass(self):
+        '''First saves the image, Then processes it with OCR to get it's password!'''
         self.__savePassImg()
-        return getPassword()
-
+        self.password = ocrPass()
+        return self.password
 
 
 if __name__ == '__main__':
     def _test():
         '''from get.vpnbook import Vpnbook'''
-        v = Vpnbook()
+        v = VpnBook()
         print(v.pptp_vpn)
         print(v.user)
         print(v.password)
