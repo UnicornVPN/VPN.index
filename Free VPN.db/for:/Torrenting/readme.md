@@ -1,1 +1,1 @@
-https://vpnpro.com/best-free-vpn-services/free-vpn-for-torrenting/
+https://vpnoverview.com/best-vpn/best-free-vpn-for-torrenting/
