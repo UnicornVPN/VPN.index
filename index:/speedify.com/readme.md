@@ -1,3 +1,5 @@
+Home: https://speedify.com/
+
 blog: https://speedify.com/blog/news/introducing-free-tier/
 
 data cap: 2 GB/month
